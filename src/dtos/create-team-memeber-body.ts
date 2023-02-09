@@ -1,0 +1,14 @@
+/* eslint-disable prettier/prettier */
+
+import { IsNotEmpty, Length } from 'class-validator';
+
+export class CreateTeamMemberBody {
+  @IsNotEmpty()
+  @Length(5, 100)
+  name: string;
+
+  @IsNotEmpty({
+    message: 'The function member should not be empty',
+  })
+  function: string;
+}
